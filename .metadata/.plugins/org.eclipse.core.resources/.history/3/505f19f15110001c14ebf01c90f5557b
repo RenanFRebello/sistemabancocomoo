@@ -1,0 +1,31 @@
+package aplicacao;
+import java.util.Locale;
+import java.util.Scanner;
+
+import entidade.Conta;
+public class programa {
+
+	public static void main(String[] args) {
+	    Locale.setDefault(Locale.ENGLISH);
+		Scanner leitor = new Scanner (System.in);
+		Conta conta;
+		// criando contas//
+		System.out.println("Digite os dados da conta");
+		System.out.println("Entre como o número da conta");
+		int numero = leitor.nextInt();
+		System.out.println("Entre com o titular da conta");
+		leitor.nextLine();
+		String titular = leitor.nextLine();
+		System.out.println("Tem valor de deposito inicial?(S/N");
+		char resposta = leitor.next().charAt(0);
+		if(resposta == 'S') {
+		System.out.println("Digite o valor do montante inicial");
+		double valorInicial = leitor.nextDouble();
+		conta = new Conta(numero,titular,valorInicial);
+	}   else { conta = new Conta(numero,titular);
+	}
+		System.out.println("Dados da conta");
+		System.out.println(conta);
+		
+		
+    }

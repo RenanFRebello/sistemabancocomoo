@@ -1,0 +1,42 @@
+package entidade;
+
+public class Conta {
+	
+	private int numero;
+	private String titular;
+	private double saldo;
+	
+	public Conta(int numero, String titular) {
+		this.numero = numero;
+		this.titular = titular;
+	}
+
+	public Conta(int numero, String titular, double depositoInicial) {
+		this.numero = numero;
+		this.titular = titular;
+		depositar(depositoInicial);
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public String getTitular() {
+		return titular;
+	}
+
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+    public void depositar (double valor1) { 
+    	saldo += valor1;
+    }
+    public void sacar (double valor2) {
+    	saldo -= valor2 + 0.1*valor2;
+    }
+}
+    
